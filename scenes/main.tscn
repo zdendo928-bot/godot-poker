@@ -1,0 +1,223 @@
+[gd_scene load_steps=2 format=3 uid="uid://main"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280
+offset_bottom = 720
+color = Color(0.102, 0.102, 0.18, 1)
+
+[node name="Table" type="ColorRect" parent="."]
+offset_left = 140
+offset_top = 180
+offset_right = 1140
+offset_bottom = 540
+color = Color(0.086, 0.129, 0.376, 1)
+
+[node name="TableBorder" type="ColorRect" parent="Table"]
+offset_left = -5
+offset_top = -5
+offset_right = 1005
+offset_bottom = 365
+color = Color(0.2, 0.3, 0.6, 1)
+
+[node name="TableInner" type="ColorRect" parent="Table"]
+offset_left = 0
+offset_top = 0
+offset_right = 1000
+offset_bottom = 360
+color = Color(0.086, 0.129, 0.376, 1)
+
+[node name="PotLabel" type="Label" parent="Table"]
+unique_name_in_owner = true
+offset_left = 400
+offset_top = -50
+offset_right = 600
+offset_bottom = -10
+theme_override_colors/font_color = Color(1, 0.84, 0, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "奖池: $0"
+
+[node name="CommunityCards" type="HBoxContainer" parent="Table"]
+unique_name_in_owner = true
+offset_left = 250
+offset_top = 130
+offset_right = 750
+offset_bottom = 230
+alignment = 1
+
+[node name="PlayerArea" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 540
+offset_top = 560
+offset_right = 740
+offset_bottom = 700
+alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="PlayerArea"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+alignment = 1
+
+[node name="Info" type="Label" parent="PlayerArea"]
+unique_name_in_owner = true
+theme_override_colors/font_color = Color(0.8, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "你: $1000"
+horizontal_alignment = 1
+
+[node name="AI1Area" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 200
+offset_top = 20
+offset_right = 400
+offset_bottom = 160
+alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="AI1Area"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+alignment = 1
+
+[node name="Info" type="Label" parent="AI1Area"]
+unique_name_in_owner = true
+theme_override_colors/font_color = Color(0.7, 0.8, 0.95, 1)
+text = "AI 1: $1000"
+horizontal_alignment = 1
+
+[node name="AI2Area" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 880
+offset_top = 20
+offset_right = 1080
+offset_bottom = 160
+alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="AI2Area"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+alignment = 1
+
+[node name="Info" type="Label" parent="AI2Area"]
+unique_name_in_owner = true
+theme_override_colors/font_color = Color(0.7, 0.8, 0.95, 1)
+text = "AI 2: $1000"
+horizontal_alignment = 1
+
+[node name="AI3Area" type="VBoxContainer" parent="."]
+offset_left = 40
+offset_top = 280
+offset_right = 240
+offset_bottom = 420
+alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="AI3Area"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+alignment = 1
+
+[node name="Info" type="Label" parent="AI3Area"]
+unique_name_in_owner = true
+theme_override_colors/font_color = Color(0.7, 0.8, 0.95, 1)
+text = "AI 3: $1000"
+horizontal_alignment = 1
+
+[node name="AI4Area" type="VBoxContainer" parent="."]
+offset_left = 1040
+offset_top = 280
+offset_right = 1240
+offset_bottom = 420
+alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="AI4Area"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 100)
+alignment = 1
+
+[node name="Info" type="Label" parent="AI4Area"]
+unique_name_in_owner = true
+theme_override_colors/font_color = Color(0.7, 0.8, 0.95, 1)
+text = "AI 4: $1000"
+horizontal_alignment = 1
+
+[node name="ActionPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+offset_left = 780
+offset_top = 550
+offset_right = 1220
+offset_bottom = 710
+
+[node name="PanelBg" type="ColorRect" parent="ActionPanel"]
+offset_right = 440
+offset_bottom = 160
+color = Color(0.15, 0.2, 0.35, 0.95)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ActionPanel"]
+offset_left = 20
+offset_top = 20
+offset_right = 420
+offset_bottom = 140
+
+[node name="StatusLabel" type="Label" parent="ActionPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "你的回合"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="ActionPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="FoldButton" type="Button" parent="ActionPanel/VBoxContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "弃牌"
+
+[node name="CheckButton" type="Button" parent="ActionPanel/VBoxContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "过牌"
+
+[node name="CallButton" type="Button" parent="ActionPanel/VBoxContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 16
+text = "跟注"
+
+[node name="RaiseButton" type="Button" parent="ActionPanel/VBoxContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.2, 1)
+theme_override_font_sizes/font_size = 16
+text = "加注"
+
+[node name="RaiseAmount" type="SpinBox" parent="ActionPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 10
+max_value = 10000
+step = 10
+value = 50
+
+[node name="NewGameButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 540
+offset_top = 340
+offset_right = 740
+offset_bottom = 400
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.9, 0.5, 1)
+theme_override_font_sizes/font_size = 24
+text = "开始新游戏"
